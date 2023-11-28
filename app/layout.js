@@ -1,8 +1,9 @@
 import './globals.css'
 import { useContext } from 'react'
 import AuthContext from './Helper/AuthContext'
-import BaseHeader from './Components/BaseHeader'
-import UnAuthenticatedHeader from './pages/un-authenticated-header'
+import UnAuthenticatedHomepage from './pages/homepage/un-authenticated-homepage'
+import IsAuthenticatedHomepage from './pages/homepage/is-authenticated-homepage'
+
 
 
 export const metadata = {
@@ -17,13 +18,18 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           { AuthStatus && AuthStatus.authenticationStatus ? (
-            <BaseHeader/>
+            <IsAuthenticatedHomepage/>
           ) : (
-            <UnAuthenticatedHeader/>
+            <UnAuthenticatedHomepage/>
           ) }
-          <div>
+
+          { AuthStatus && AuthStatus.authenticationStatus ? (
+            <div>
             {children}
           </div>
+          ) : (
+            ''
+          ) }
         </body>
       </html>
     </AuthContext>
