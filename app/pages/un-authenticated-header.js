@@ -32,7 +32,7 @@ const UnAuthenticatedHeader = () => {
   
   return (
     <>
-      <div ref={headerRef} className='fixed top-0 left-0 right-0  z-9999 p-1 bg-transparent rounded-b-lg'>
+      <div ref={headerRef} className='fixed top-0 left-0 right-0  p-1 bg-transparent rounded-b-lg '>
         <Navbar/>
       </div>
     </>
