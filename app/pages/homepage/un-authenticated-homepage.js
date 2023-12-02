@@ -30,22 +30,35 @@ const UnAuthenticatedHomepage = () => {
   return (
     <>
       <UnAuthenticatedHeader/>
-      <div className='flex '>
-        {/* <div className='flex-grow z-2 h-screen ' style={{ background: 'linear-gradient(to right, rgb(4,17,31), rgba(4,17,31,0.8))' }}></div> */}
-        <div className='flex-grow z-2 h-screen ' style={{ background: 'rgba(9,17,35,0.9)' }}></div>
-        <div 
-          className='flex-grow-0 text-[snow] w-[50%] object-cover z-3 bg-cover bg-center  opacity-1'
-          style={{ backgroundImage: `url('/images/basehomepagenebula.png')`}}
-        >
-          
-        {/* <div className='inset-0 z-4 bg-black opacity-25'></div> */}
+      <div>
+      {/* //try out h-full too */}
+        <div className='bg-gradient-to-b from-gray-400 via-gray-900 to-black relative w-full h-[100vh]'> 
+          <img src='/images/basehomepagenebula.png' className='w-full h-full object-cover absolute mix-blend-overlay'></img>
+          <div className='p-24 mt-50'>
+            <h2 className='text-slate-300 text-8xl mt-[20vw] font-bold font-[-apple-system,BlinkMacSystemFont,"Segoe_UI","Noto_Sans",Helvetica,Arial,sans-serif,"Apple_Color_Emoji","Segoe_UI_Emoji"]'>Let's build together</h2>
+            <h4 className='text-slate-300 text-5xl font-light font-[-apple-system,BlinkMacSystemFont,"Segoe_UI","Noto_Sans",Helvetica,Arial,sans-serif,"Apple_Color_Emoji","Segoe_UI_Emoji"]'>lorem ipsum</h4>
+          </div>
         </div>
+
+        {
+          // {/* <div></div> */}
+          // {/* <div className='flex-grow z-2 h-screen ' style={{ background: 'linear-gradient(to right, rgb(4,17,31), rgba(4,17,31,0.8))' }}></div> */}
+          // {/* <div className='flex-grow z-2 h-screen ' style={{ background: 'rgba(9,17,35,0.9)' }}></div>
+          // <div 
+          //   className='flex-grow-0 text-[snow] w-[50%] object-cover z-3 bg-cover bg-center  opacity-1'
+          //   style={{ backgroundImage: `url('/images/basehomepagenebula.png')`}}
+          // >
+            
+          // //  <div className='inset-0 z-4 bg-black opacity-25'></div> 
+          // </div> */}
+        }
+
       </div>
       
       <div 
         className='bg-black h-[150vh] w-full z-10'
         ref={secondSet}>
-          <BentoGrid/>
+          {/* <BentoGrid/> */}
         </div>
     </>
   )
