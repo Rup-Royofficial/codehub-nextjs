@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <AuthContext>
       <html lang="en">
+        {/* <head><script src="http://localhost:8097"></script></head> */}
         <body>
           { AuthStatus && AuthStatus.authenticationStatus ? (
             <IsAuthenticatedHomepage/>

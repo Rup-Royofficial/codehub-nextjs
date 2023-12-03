@@ -1,16 +1,26 @@
 import React from 'react'
 import Button from './Button'
+import Link from 'next/link'
 
 
 const Navbar = () => {
   return (
     <>
-        <div className='relative  flex items-center justify-between px-9 py-1 m-[1vw] font-[-apple-system,BlinkMacSystemFont,"Segoe_UI","Noto_Sans",Helvetica,Arial,sans-serif,"Apple_Color_Emoji","Segoe_UI_Emoji"]'>
-            <div className='flex'>
-                <img src="" alt="logo-img"/>
-                <p className='ml-[1vw] mr-[1vw] cursor-pointer text-[snow]'>Docs</p>
-                <p className='mr-[1vw] cursor-pointer text-[snow]'>Products</p>
-                <p className='cursor-pointer text-[snow]'>Pricing</p>
+        <div className='flex items-center justify-between px-11 py-5  font-[-apple-system,BlinkMacSystemFont,"Segoe_UI","Noto_Sans",Helvetica,Arial,sans-serif,"Apple_Color_Emoji","Segoe_UI_Emoji"]'>
+            <div className=''>
+                <ul className='flex gap-7'>
+                    <img src="" alt="logo-img"/>
+                    <li>
+                        {/* <>Docs</> */}
+                        <Link href="/" className='text-[snow]'>Docs</Link>
+                    </li>
+                    <li>
+                        <Link href="/" className='text-[snow]'>Products</Link>
+                    </li>
+                    <li>
+                        <Link href="/" className='text-[snow]'>Pricing</Link>
+                    </li>
+                </ul>
             </div>
             <div className='flex '>
                 <Button 

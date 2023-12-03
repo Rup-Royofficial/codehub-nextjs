@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-img {
+    background-image: url('/images/nebula.jpg');
+}
+/* bg-gradient-to-bl from-red-400 via-gray-300 to-blue-500
+linear-gradient(to left bottom, rgb(248, 113, 113), rgb(209, 213, 219), rgb(59, 130, 246)) */
+.gradient-text {
+    background: linear-gradient(
+        to left bottom,
+        rgb(248, 113, 113),
+        rgb(209, 213, 219),
+        rgb(59, 130, 246),
+        rgb(209, 213, 219),
+        rgb(199, 102, 102),
+        rgb(208,50,50),
+        rgb(209, 213, 219),
+        rgb(59, 130, 246)
+    );
+    background-size: 300% 300%;
+    background-clip: text;
+}
