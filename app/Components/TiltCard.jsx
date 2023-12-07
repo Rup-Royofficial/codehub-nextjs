@@ -11,7 +11,8 @@ const Example = () => {
   );
 };
 
-const TiltCard = () => {
+const TiltCard = ({ backgroundImg }) => {
+  // backgroundImg = "/images/illus-codespaces.png";
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -58,15 +59,18 @@ const TiltCard = () => {
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
+        
       }}
-      className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
+      className="relative h-96 w-72 rounded-xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-indigo-200 via-slate-600 to-indigo-200"
     >
       <div
+        
         style={{
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
+          backgroundImage: `url(${backgroundImg})`
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
+        className="absolute inset-4 grid place-content-center rounded-xl    shadow-lg"
       >
         <FiMousePointer
           style={{

@@ -46,7 +46,7 @@ const UnAuthenticatedHeader = () => {
   
   return (
     <>
-      <div className={header ? 'fixed w-full ease-in [transition:1.5s] bg-slate-700 z-[10]' : 'fixed ease-in [transition:1.5s] w-full bg-transparent z-[10]'}>
+      <div className={header ? 'fixed w-full ease-in [transition:1.5s] bg-[rgba(_255,_255,_255,_0.3_)] backdrop-filter backdrop-blur-[7.5px]   z-[10]' : 'fixed ease-in [transition:1.5s] w-full bg-transparent z-[10]'}>
         <Navbar/>
       </div>
     </>
