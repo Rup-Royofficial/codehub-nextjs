@@ -6,6 +6,20 @@
 .custom-img {
     background-image: url('/images/nebula.jpg');
 }
+
+.illustrationAction-img {
+    background-image: url('/images/illus-actions.png');
+}
+.illustrationCodespace-img {
+    background-image: url('/images/illus-codespaces.png');
+}
+.illustrationDepend-img {
+    background-image: url('/images/dependabot.png');
+}
+.illustrationSecretScan-img {
+    background-image: url('/images/secretscanning.png');
+}
+
 /* bg-gradient-to-bl from-red-400 via-gray-300 to-blue-500
 linear-gradient(to left bottom, rgb(248, 113, 113), rgb(209, 213, 219), rgb(59, 130, 246)) */
 .gradient-text {
@@ -22,4 +36,14 @@ linear-gradient(to left bottom, rgb(248, 113, 113), rgb(209, 213, 219), rgb(59, 
     );
     background-size: 300% 300%;
     background-clip: text;
+}
+
+.tiltCard_2 {
+    background-color: #C7D2FE; 
+    background-color: #C7D2FE; 
+    background: conic-gradient(at_top_right,_var(--tw-gradient-stops));
+}
+
+.twotwenty {
+    background-image: url('/images/nebula.jpg');;
 }
