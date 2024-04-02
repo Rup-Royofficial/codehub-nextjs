@@ -14,6 +14,8 @@ const UnAuthenticatedHomepage = () => {
   const [backgroundIg, setBackgroundImg] = useState(
     "/images/nebula.jpg"
  );
+
+ 
   // console.log('Parent Component - Background Image:', backgroundImg);
   // const secondSet = useRef(null)
   // useEffect(() => {
