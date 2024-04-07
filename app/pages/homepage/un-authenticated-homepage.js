@@ -15,16 +15,6 @@ import UnAuthenticatedFooter from '../un-authenticated-footer'
 
 const UnAuthenticatedHomepage = () => {
 
-  const [backgroundIg, setBackgroundIg] = useState("/images/nebula.jpg");
-
-
-  const [backgroundIg, setBackgroundImg] = useState("/images/nebula.jpg");
-
-  
-
-  const [backgroundIg, setBackgroundImg] = useState(
-    "/images/nebula.jpg"
- );
 
  
   // console.log('Parent Component - Background Image:', backgroundImg);
@@ -77,7 +67,7 @@ const UnAuthenticatedHomepage = () => {
         <div className='bg-slate-900 h-[200vh] w-full  relative '>
           <div className='absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-black z-[0]'></div>
           <div className='absolute top-0 left-0 z-0 ml-[15%] flex mt-[5vw]'>
-            <TiltCard backgroundImg={ backgroundIg } />
+            <TiltCard />
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[8vw] left-[28vw] z-0 '>
               Codehub Actions <span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Automates your build, test, and deployment workflow with<br></br> simple and secure CI/CD.</span>
             </p>
@@ -86,10 +76,10 @@ const UnAuthenticatedHomepage = () => {
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[11vw] right-[22vw] z-0 '>
               Codehub Devspace<span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Our DevSpace ffers a complete environment in seconds. Code, build, test, and open pull requests from any repo</span>
             </p>
-            <TiltCard backgroundImg="/images/nebula.jpg" />
+            <TiltCard  />
           </div>
           <div className='absolute w-[50vw] bottom-0 left-1/2 transform -translate-x-1/2 z-0 ml-[-15%] mb-[5vw]'>
-            <TiltCard backgroundImg={ "/images/nebula.jpg" }/>
+            <TiltCard />
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[12vw] -right-[38vw] z-0 '>
               Code scanning<span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Our code analysis tool that helps you remediate issues in your code.</span>
             </p>
