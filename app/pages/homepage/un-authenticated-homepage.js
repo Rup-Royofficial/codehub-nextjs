@@ -1,35 +1,21 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import UnAuthenticatedHeader from '../un-authenticated-header'
-import Image from 'next/image'
 import  TiltCard  from '../../Components/TiltCard'
 import { BouncyCardsFeatures } from '@/app/Components/BouncyCardFeatures'
-import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'
-import BaseFooter from '@/app/Components/BaseFooter'
 import HorizontalInfiniteScrollTrusts from '@/app/Components/HorizontalInfinteScrollTrusts'
 import UnAuthenticatedFooter from '../un-authenticated-footer'
 
+// import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'
+// import BaseFooter from '@/app/Components/BaseFooter'
+// import Image from 'next/image'
+
+
+
 
 const UnAuthenticatedHomepage = () => {
-  const [backgroundIg, setBackgroundImg] = useState(
-    "/images/nebula.jpg"
- );
-  // console.log('Parent Component - Background Image:', backgroundImg);
-  // const secondSet = useRef(null)
-  // useEffect(() => {
-  //   if(secondSet.current){
-  //     gsap.to(secondSet.current, {
-  //       backgroundColor: "rgba(9,17,35,0.9)",
-  //       scrollTrigger:{
-  //         // trigger: secondSet.current,
-  //         scroller:"body",
-  //         start: "top 0%",
-  //         // end: "top -80%",
-  //         scrub: 1,
-  //       }
-  //     })
-  //   }
-  // }, [])
+  const [backgroundIg, setBackgroundImg] = useState("/images/nebula.jpg");
+  
 
   return (
     <>

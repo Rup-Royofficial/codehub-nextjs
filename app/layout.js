@@ -1,9 +1,5 @@
 import './globals.css'
-import { useContext } from 'react'
-import AuthContext from './Helper/AuthContext'
-import UnAuthenticatedHomepage from './pages/homepage/un-authenticated-homepage'
-import IsAuthenticatedHomepage from './pages/homepage/is-authenticated-homepage'
-
+import { Providers } from './providers'
 
 
 export const metadata = {
@@ -12,28 +8,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const AuthStatus = typeof window !== 'undefined' ? useContext(AuthContext) : null;
   return (
-    <AuthContext>
-      <html lang="en">
-        {/* <head><script src="http://localhost:8097"></script></head> */}
-        <body>
-          { AuthStatus && AuthStatus.authenticationStatus ? (
-            <IsAuthenticatedHomepage/>
-          ) : (
-            <UnAuthenticatedHomepage/>
-          ) }
-
-          { AuthStatus && AuthStatus.authenticationStatus ? (
-            <div>
-            {children}
-          </div>
-          ) : (
-            ''
-          ) }
-        </body>
-      </html>
-    </AuthContext>
-    
-  )
+    <html lang="en" className="dark">
+      {/* <head><script src="http://localhost:8097"></script></head> */}
+      <Providers>
+        <body>{children}</body>
+      </Providers>
+    </html>
+  );
 }
