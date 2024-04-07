@@ -14,7 +14,7 @@ import UnAuthenticatedFooter from '../un-authenticated-footer'
 
 
 const UnAuthenticatedHomepage = () => {
-  const [backgroundIg, setBackgroundImg] = useState("/images/nebula.jpg");
+  const [backgroundIg, setBackgroundIg] = useState("/images/nebula.jpg");
   
 
   return (
