@@ -1,10 +1,9 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar';
 
 
 const UnAuthenticatedHeader = () => {
-  // const headerRef = useRef(null)
   const [header, setHeader] = useState(false)
 
   const headerAnimation = () => {

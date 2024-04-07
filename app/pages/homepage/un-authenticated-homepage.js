@@ -1,16 +1,23 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import UnAuthenticatedHeader from '../un-authenticated-header'
-import Image from 'next/image'
 import  TiltCard  from '../../Components/TiltCard'
 import { BouncyCardsFeatures } from '@/app/Components/BouncyCardFeatures'
-import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'
-import BaseFooter from '@/app/Components/BaseFooter'
 import HorizontalInfiniteScrollTrusts from '@/app/Components/HorizontalInfinteScrollTrusts'
 import UnAuthenticatedFooter from '../un-authenticated-footer'
 
+// import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'
+// import BaseFooter from '@/app/Components/BaseFooter'
+// import Image from 'next/image'
+
+
+
 
 const UnAuthenticatedHomepage = () => {
+
+  const [backgroundIg, setBackgroundImg] = useState("/images/nebula.jpg");
+  
+
   const [backgroundIg, setBackgroundImg] = useState(
     "/images/nebula.jpg"
  );
@@ -32,6 +39,7 @@ const UnAuthenticatedHomepage = () => {
   //     })
   //   }
   // }, [])
+
 
   return (
     <>
