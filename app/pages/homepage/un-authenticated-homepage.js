@@ -14,8 +14,36 @@ import UnAuthenticatedFooter from '../un-authenticated-footer'
 
 
 const UnAuthenticatedHomepage = () => {
+
   const [backgroundIg, setBackgroundIg] = useState("/images/nebula.jpg");
+
+
+  const [backgroundIg, setBackgroundImg] = useState("/images/nebula.jpg");
+
   
+
+  const [backgroundIg, setBackgroundImg] = useState(
+    "/images/nebula.jpg"
+ );
+
+ 
+  // console.log('Parent Component - Background Image:', backgroundImg);
+  // const secondSet = useRef(null)
+  // useEffect(() => {
+  //   if(secondSet.current){
+  //     gsap.to(secondSet.current, {
+  //       backgroundColor: "rgba(9,17,35,0.9)",
+  //       scrollTrigger:{
+  //         // trigger: secondSet.current,
+  //         scroller:"body",
+  //         start: "top 0%",
+  //         // end: "top -80%",
+  //         scrub: 1,
+  //       }
+  //     })
+  //   }
+  // }, [])
+
 
   return (
     <>
