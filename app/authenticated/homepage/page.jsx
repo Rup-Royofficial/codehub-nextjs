@@ -1,10 +1,8 @@
 'use client'
 import AuthenticatedNavbar from "@/app/Components/AuthenticatedNavbar"
-// import FileUpload from "@/app/Components/FileUpload"
 import { createClient } from "@/app/utils/supabase/client"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-// import { CldUploadWidget } from 'next-cloudinary'
 import { v4 as uuidv4 } from 'uuid'
 import alanBtn from "@alan-ai/alan-sdk-web";
 
@@ -68,9 +66,6 @@ export default function Homepage() {
         // Check if the user is authenticated on the client-side
         const checkAuthentication = async () => {
           const { data, error } = await supabase.auth.getUser()
-    
-
-          
           if (error || !data.user) {
             // User is not authenticated, redirect to the appropriate page
             router.push('/')
