@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@alan-ai/alan-sdk-web": "^1.8.54",
+    "@codemirror/lang-css": "^6.2.1",
+    "@codemirror/lang-html": "^6.4.8",
+    "@codemirror/lang-javascript": "^6.2.2",
     "@material-tailwind/react": "^2.1.5",
     "@nextui-org/react": "^2.2.10",
     "@react-spring/web": "^9.7.3",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.42.0",
+    "@supabase/supabase-js": "^2.42.3",
+    "@uiw/react-codemirror": "^4.21.25",
     "axios": "^1.6.8",
     "convex": "^1.11.0",
     "framer-motion": "^10.18.0",
@@ -24,7 +31,8 @@
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.12.0",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
