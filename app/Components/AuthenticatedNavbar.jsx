@@ -1,11 +1,32 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 import { logout } from "../logout/actions";
+import { createClient } from "../utils/supabase/client";
+// import { useNavigate } from "react-router-dom";
+// import { revalidatePath } from 'next/cache'
+// import { redirect } from 'next/navigation'
 
 
 export default function AuthenticatedNavbar() {
+  const supabase = createClient()
+  const [strEmail, setStrEmail] = useState()
+  const getUser = async () => {
+    try {
+      const { data:{user} }  = await supabase.auth.getUser()
+      setStrEmail(user.email)
+        // console.log(user.email)
+      
+    } catch(e){
+
+    }
+  }
+
+  useEffect(() => {
+      getUser()
+  },[])
     // const AcmeLogo = () => (
     //     <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
     //       <path
@@ -17,6 +38,12 @@ export default function AuthenticatedNavbar() {
     //     </svg>
     //   );
       // console.log(onLogout)
+      
+
+      // const handleCodespaceClick = () => {
+      //   // revalidatePath('/','layout')
+      //   redirect('/authenticated/codespace')
+      // }
       return (
         // <nav>
          <Navbar>
@@ -59,13 +86,13 @@ export default function AuthenticatedNavbar() {
               <DropdownMenu aria-label="Profile Actions" variant="flat">
                 <DropdownItem key="profile" className="h-14 gap-2">
                   <p className="font-semibold">Signed in as</p>
-                  <p className="font-semibold">zoey@example.com</p>
+                  <p className="font-semibold">{strEmail}</p>
                 </DropdownItem>
                 <DropdownItem key="settings">My Settings</DropdownItem>
                 <DropdownItem key="team_settings">Team Settings</DropdownItem>
                 <DropdownItem key="analytics">Analytics</DropdownItem>
                 <DropdownItem key="system">System</DropdownItem>
-                <DropdownItem key="configurations">Configurations</DropdownItem>
+                <DropdownItem key="codespace" ><a href="/authenticated/codespace">Playground</a></DropdownItem>
                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                 <DropdownItem key="logout" color="danger" onClick={() => logout()}>
                   Log Out
