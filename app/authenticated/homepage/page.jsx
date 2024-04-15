@@ -74,7 +74,7 @@ export default function Homepage() {
             router.push('/')
           }else {
             // User is authenticated, check if they're trying to access the login/signup page
-            const currentPath = window.location.pathname
+            const currentPath = router.pathname
             if (currentPath.startsWith('/login')) {
               // Redirect to the authenticated homepage
               router.push('/authenticated/homepage')
