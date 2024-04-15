@@ -69,12 +69,14 @@ export default function Homepage() {
         const checkAuthentication = async () => {
           const { data, error } = await supabase.auth.getUser()
     
+
+          
           if (error || !data.user) {
             // User is not authenticated, redirect to the appropriate page
             router.push('/')
           }else {
             // User is authenticated, check if they're trying to access the login/signup page
-            const currentPath = window.location.pathname
+            const currentPath = router.pathname
             if (currentPath.startsWith('/login')) {
               // Redirect to the authenticated homepage
               router.push('/authenticated/homepage')
