@@ -69,6 +69,8 @@ export default function Homepage() {
         const checkAuthentication = async () => {
           const { data, error } = await supabase.auth.getUser()
     
+
+          
           if (error || !data.user) {
             // User is not authenticated, redirect to the appropriate page
             router.push('/')
