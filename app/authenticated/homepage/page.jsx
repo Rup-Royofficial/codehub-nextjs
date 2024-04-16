@@ -4,13 +4,15 @@ import { createClient } from "@/app/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import alanBtn from "@alan-ai/alan-sdk-web";
+// import alanBtn from "@alan-ai/alan-sdk-web";
 
 export default function Homepage() {
   const router = useRouter();
   const supabase = createClient();
   const [userId, setUserId] = useState("");
   const [media, setMedia] = useState([]);
+ 
+  
 
   const getUser = async () => {
     try {
@@ -72,7 +74,7 @@ export default function Homepage() {
         router.push("/");
       } else {
         // User is authenticated, check if they're trying to access the login/signup page
-        const currentPath = router.pathname;
+        const currentPath = window.location.pathname;
         if (currentPath.startsWith("/login")) {
           // Redirect to the authenticated homepage
           router.push("/authenticated/homepage");
@@ -83,6 +85,8 @@ export default function Homepage() {
   }, [router, supabase]);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+    const alanBtn = require('@alan-ai/alan-sdk-web');
     alanBtn({
       key: "6be70ec10e0cc8a421bffb043a82d3f62e956eca572e1d8b807a3e2338fdd0dc/stage",
       onCommand: (commandData) => {
@@ -91,6 +95,7 @@ export default function Homepage() {
         }
       },
     });
+    }
   }, []);
 
   return (
