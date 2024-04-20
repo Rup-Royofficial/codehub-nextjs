@@ -1,5 +1,9 @@
 "use client";
 import AuthenticatedNavbar from "@/app/Components/AuthenticatedNavbar";
+import ImageCard from "@/app/Components/ImageCard";
+import BlurredFooterCard from "@/app/Components/BlurredFooterCard"
+import {Avatar, AvatarIcon, Button, useInput} from "@nextui-org/react";
+// import FileBox from "@/app/Components/FileBox";
 import { createClient } from "@/app/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -11,8 +15,10 @@ export default function Homepage() {
   const supabase = createClient();
   const [userId, setUserId] = useState("");
   const [media, setMedia] = useState([]);
+  const  cardWidth= (100 - (4*10))/4;
+  const [file, setFile] = useState("");  // State to hold the file name
  
-  
+
 
   const getUser = async () => {
     try {
@@ -28,6 +34,14 @@ export default function Homepage() {
     } catch (e) {}
   };
 
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFile(file.name);  // Set file name
+      uploadimage(e);      // Trigger the upload function
+    }
+  };
   async function uploadimage(e) {
     let file = e.target.files[0];
 
@@ -101,7 +115,16 @@ export default function Homepage() {
   return (
     <>
       <AuthenticatedNavbar />
-      <div className="bg-white">This is authenticated homepage</div>
+      <div className="flex items-center justify-center mx-[40vw] my-8">
+        <Avatar
+          isBordered
+          as="button"
+          className="transition-transform bg-gradient-to-br from-[#FFB457] to-[#FF705B] text-black/80 w-[10vw] h-[10vw] text-large"
+          color="secondary"
+          
+          icon={<AvatarIcon />}
+        />
+      </div>
       {/* <FileUpload /> */}
       {/* <CldUploadWidget uploadPreset="ml_default">
           {({ open }) => {
@@ -115,17 +138,29 @@ export default function Homepage() {
         }}
       />
       <div className="mt-5">My Uploads</div>
-      {media.map((media) => {
-        return (
-          <>
-            <div key={media.name}>
-              <img
-                src={`https://reysjyjdootrkwsiolaj.supabase.co/storage/v1/object/public/codehub/ca229be8-b36a-4771-b40a-77c6fcd2ae77/${media.name}`}
-              />
-            </div>
-          </>
-        );
-      })}
+      <div className="flex flex-wrap items-center justify-center mx-[20vw]">
+        {media.map((media) => {
+          const imageUrl = `https://reysjyjdootrkwsiolaj.supabase.co/storage/v1/object/public/codehub/ca229be8-b36a-4771-b40a-77c6fcd2ae77/${media.name}`;
+          return (
+            // <div className="flex" style={{ flexBasis:"25%" }}>
+            //   <div key={media.name} className="flex flex-wrap items-center justify-center">
+            /* <img
+                src={imageUrl}
+                alt={media.name}
+              /> */
+            /* <ImageCard srcUrl={imageUrl} fileName={media.name}/> */
+
+            <BlurredFooterCard
+              key={media.name}
+              srcUrl={imageUrl}
+              fileName={media.name}
+              style={{ flexBasis: `${cardWidth}%` }}
+            />
+            //   </div>
+            // </div>
+          );
+        })}
+      </div>
     </>
   );
 }

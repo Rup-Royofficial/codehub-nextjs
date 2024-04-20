@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, AvatarIcon} from "@nextui-org/react";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
-
+import CustomAvatar from "./CustomAvatar.jsx";
 import { logout } from "../logout/actions";
 import { createClient } from "../utils/supabase/client";
 // import { useNavigate } from "react-router-dom";
@@ -53,19 +53,19 @@ export default function AuthenticatedNavbar() {
           </NavbarBrand>
     
           <NavbarContent className="hidden sm:flex gap-4" justify="center">
-            <NavbarItem>
-              <Link color="foreground" href="#">
-                Features
-              </Link>
-            </NavbarItem>
             <NavbarItem isActive>
-              <Link href="#" aria-current="page" color="secondary">
-                Customers
+              <Link color="foreground" href="/authenticated/homepage">
+                Home
               </Link>
             </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="#">
-                Integrations
+            <NavbarItem >
+              <Link href="/authenticated/codespace" aria-current="page" color="secondary">
+                Playground
+              </Link>
+            </NavbarItem>
+            <NavbarItem >
+              <Link color="secondary" href="/authenticated/codegeneration">
+                Code Generation
               </Link>
             </NavbarItem>
           </NavbarContent>
@@ -73,15 +73,15 @@ export default function AuthenticatedNavbar() {
           <NavbarContent as="div" justify="end">
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
-                <Avatar
+                 <Avatar
                   isBordered
                   as="button"
-                  className="transition-transform"
+                  className="transition-transform bg-gradient-to-br from-[#FFB457] to-[#FF705B] text-black/80"
                   color="secondary"
-                  name="Jason Hughes"
                   size="sm"
-                  src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                />
+                  icon={<AvatarIcon />}
+                /> 
+                {/* // <CustomAvatar/> */}
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
                 <DropdownItem key="profile" className="h-14 gap-2">
@@ -92,7 +92,7 @@ export default function AuthenticatedNavbar() {
                 <DropdownItem key="team_settings">Team Settings</DropdownItem>
                 <DropdownItem key="analytics">Analytics</DropdownItem>
                 <DropdownItem key="system">System</DropdownItem>
-                <DropdownItem key="codespace" ><a href="/authenticated/codespace">Playground</a></DropdownItem>
+                <DropdownItem key="codespace" ><Link href="/authenticated/codespace">Playground</Link></DropdownItem>
                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                 <DropdownItem key="logout" color="danger" onClick={() => logout()}>
                   Log Out
