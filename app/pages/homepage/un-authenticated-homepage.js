@@ -2,9 +2,11 @@
 import React, { useState } from 'react'
 import UnAuthenticatedHeader from '../un-authenticated-header'
 import  TiltCard  from '../../Components/TiltCard'
-import { BouncyCardsFeatures } from '@/app/Components/BouncyCardFeatures'
-import HorizontalInfiniteScrollTrusts from '@/app/Components/HorizontalInfinteScrollTrusts'
+import { BouncyCardsFeatures } from 'app/Components/BouncyCardFeatures.jsx'
+import HorizontalInfiniteScrollTrusts from 'app/Components/HorizontalInfinteScrollTrusts'
 import UnAuthenticatedFooter from '../un-authenticated-footer'
+import NextButton from "app/Components/NextUIButton"
+
 
 // import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'
 // import BaseFooter from '@/app/Components/BaseFooter'
@@ -46,6 +48,7 @@ const UnAuthenticatedHomepage = () => {
               {/* https://www.youtube.com/watch?v=qOkwf7VoHbM  animated text gradient*/  }
             <h2 className='text-9xl font-bold '>Develop.Think.Deploy</h2>
             <h6 className='text-[2vw] font-medium text-[#a1a1a1] z-[1]'>Lets build together</h6>
+            <a href="/login"><NextButton size="lg" className="bg-white text-black border-none mt-5 shadow-lg" btnText="Get Started"/></a>
             {/* text erom choto o rakha jai <h2 className='text-[8vw] font-bold '>Develop.Think.Deploy</h2> */}
 
             {/* <h4 className='text-2xl mt-3'>Lets build together</h4> */}
