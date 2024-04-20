@@ -49,7 +49,7 @@ export default function AuthenticatedNavbar() {
          <Navbar>
           <NavbarBrand>
             {/*Here the ACME loge was present*/}
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">{"</>HUB"}</p>
           </NavbarBrand>
     
           <NavbarContent className="hidden sm:flex gap-4" justify="center">

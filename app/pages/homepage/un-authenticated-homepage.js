@@ -48,7 +48,7 @@ const UnAuthenticatedHomepage = () => {
               {/* https://www.youtube.com/watch?v=qOkwf7VoHbM  animated text gradient*/  }
             <h2 className='text-9xl font-bold '>Develop.Think.Deploy</h2>
             <h6 className='text-[2vw] font-medium text-[#a1a1a1] z-[1]'>Lets build together</h6>
-            <a href="/login"><NextButton size="lg" className="bg-white text-black border-none mt-5 shadow-lg" btnText="Get Started"/></a>
+            <a href="/login"><NextButton size="lg" className="bg-white font-bold text-black border-none mt-5 shadow-lg" btnText="Get Started"/></a>
             {/* text erom choto o rakha jai <h2 className='text-[8vw] font-bold '>Develop.Think.Deploy</h2> */}
 
             {/* <h4 className='text-2xl mt-3'>Lets build together</h4> */}
