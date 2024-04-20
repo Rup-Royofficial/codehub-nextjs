@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import Link from 'next/link'
-import NextButton from "@/app/Components/NextUIButton"
+import NextButton from "./NextUIButton"
 import { useRouter } from "next/navigation";
 
 

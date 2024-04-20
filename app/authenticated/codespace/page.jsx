@@ -1,10 +1,10 @@
 'use client'
-import AuthenticatedNavbar from "@/app/Components/AuthenticatedNavbar"
+import AuthenticatedNavbar from "app/Components/AuthenticatedNavbar"
 import { useCallback, useEffect, useState } from "react";
 import { javascript } from "@codemirror/lang-javascript";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
-import CodespaceResult from "@/app/Components/CodespaceResult";
+import CodespaceResult from "app/Components/CodespaceResult";
 import CodeMirror from "@uiw/react-codemirror";
 
 

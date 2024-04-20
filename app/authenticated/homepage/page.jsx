@@ -1,10 +1,10 @@
 "use client";
-import AuthenticatedNavbar from "@/app/Components/AuthenticatedNavbar";
-import ImageCard from "@/app/Components/ImageCard";
-import BlurredFooterCard from "@/app/Components/BlurredFooterCard"
+import AuthenticatedNavbar from "app/Components/AuthenticatedNavbar";
+// import ImageCard from "@/app/Components/ImageCard";
+import BlurredFooterCard from "app/Components/BlurredFooterCard"
 import {Avatar, AvatarIcon, Button, useInput} from "@nextui-org/react";
 // import FileBox from "@/app/Components/FileBox";
-import { createClient } from "@/app/utils/supabase/client";
+import { createClient } from "app/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";

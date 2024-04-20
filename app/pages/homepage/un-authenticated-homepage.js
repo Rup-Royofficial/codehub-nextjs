@@ -2,10 +2,10 @@
 import React, { useState } from 'react'
 import UnAuthenticatedHeader from '../un-authenticated-header'
 import  TiltCard  from '../../Components/TiltCard'
-import { BouncyCardsFeatures } from '@/app/Components/BouncyCardFeatures'
-import HorizontalInfiniteScrollTrusts from '@/app/Components/HorizontalInfinteScrollTrusts'
+import { BouncyCardsFeatures } from 'app/Components/BouncyCardFeatures.jsx'
+import HorizontalInfiniteScrollTrusts from 'app/Components/HorizontalInfinteScrollTrusts'
 import UnAuthenticatedFooter from '../un-authenticated-footer'
-import NextButton from "@/app/Components/NextUIButton"
+import NextButton from "app/Components/NextUIButton"
 
 
 // import HorizontalCardCarousel from '../../Components/HorizontalCardCarousel'

@@ -1,6 +1,6 @@
 'use server'
 import { redirect } from 'next/navigation'
-import { createClient } from '@/app/utils/supabase/server'
+import { createClient } from 'app/utils/supabase/server'
 import { revalidatePath } from "next/cache";
 
 export async function logout() {

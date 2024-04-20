@@ -64,7 +64,7 @@ export default function AuthenticatedNavbar() {
               </Link>
             </NavbarItem>
             <NavbarItem >
-              <Link color="secondary" href="/authenticated/codegeneration">
+              <Link color="secondary" href="/authenticated/code">
                 Code Generation
               </Link>
             </NavbarItem>
