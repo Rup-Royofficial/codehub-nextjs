@@ -70,7 +70,7 @@ const UnAuthenticatedHomepage = () => {
         <div className='bg-slate-900 h-[200vh] w-full  relative '>
           <div className='absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-black z-[0]'></div>
           <div className='absolute top-0 left-0 z-0 ml-[15%] flex mt-[5vw]'>
-            <TiltCard />
+            <TiltCard bgImg={"https://edgestore.dev/img/video-thumb.png"}/>
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[8vw] left-[28vw] z-0 '>
               Codehub Actions <span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Automates your build, test, and deployment workflow with<br></br> simple and secure CI/CD.</span>
             </p>
@@ -79,12 +79,12 @@ const UnAuthenticatedHomepage = () => {
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[11vw] right-[22vw] z-0 '>
               Codehub Devspace<span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Our DevSpace ffers a complete environment in seconds. Code, build, test, and open pull requests from any repo</span>
             </p>
-            <TiltCard  />
+            <TiltCard  bgImg={"https://uploads.sitepoint.com/wp-content/uploads/2021/08/1628090414codepen.jpg"}/>
           </div>
           <div className='absolute w-[50vw] bottom-0 left-1/2 transform -translate-x-1/2 z-0 ml-[-15%] mb-[5vw]'>
-            <TiltCard />
+            <TiltCard bgImg={"https://global.discourse-cdn.com/openai1/original/4X/2/9/5/29516e9d804cc2f45ff0d1c4e17d65efe078896b.png"}/>
             <p className='text-white w-[50vw] text-5xl font-bold absolute top-[12vw] -right-[38vw] z-0 '>
-              Code scanning<span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Our code analysis tool that helps you remediate issues in your code.</span>
+              Code Generation<span className='text-[1.2vw] font-medium text-[slategrey]'><br></br>Our code generation tool that helps you remediate issues in your code.</span>
             </p>
           </div>
         </div>

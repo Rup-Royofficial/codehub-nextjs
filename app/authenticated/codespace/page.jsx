@@ -6,10 +6,47 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import CodespaceResult from "app/Components/CodespaceResult";
 import CodeMirror from "@uiw/react-codemirror";
-
+import { createClient } from "app/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
 
 export default function Codespace() {
+  const router = useRouter();
+  const supabase = createClient();
+  const [userId, setUserId] = useState("");
+
+  const getUser = async () => {
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user !== null) {
+        // console.log(user)
+        setUserId(user.id);
+      } else {
+        setUserId("404 not found user.id");
+      }
+    } catch (e) {}
+  };
+
+  useEffect(() => {
+    // Check if the user is authenticated on the client-side
+    const checkAuthentication = async () => {
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data.user) {
+        // User is not authenticated, redirect to the appropriate page
+        router.push("/");
+      } else {
+        // User is authenticated, check if they're trying to access the login/signup page
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith("/login")) {
+          // Redirect to the authenticated homepage
+          router.push("/authenticated/codespace");
+        }
+      }
+    };
+    checkAuthentication();
+  }, [router, supabase]);
 
     //* create three usestate 
   const [html_edit, setHtml_Edit] = useState("");

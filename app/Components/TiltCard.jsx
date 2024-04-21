@@ -2,17 +2,19 @@ import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer } from "react-icons/fi";
 
-const Example = () => {
+const Example = ({bgImg}) => {
+  // console.log(bgImg)
   return (
     // bg-gradient-to-br from-indigo-500 to-violet-500
     <div className="grid w-full place-content-center  px-4 py-12 text-slate-900">
-      <TiltCard />
+      <TiltCard backgImg={bgImg}/>
     </div>
   );
 };
 
-const TiltCard = ({ backgroundImg }) => {
+const TiltCard = ({backgImg}) => {
   // backgroundImg = "/images/illus-codespaces.png";
+  // console.log(backgImg + "helloe")
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -68,23 +70,23 @@ const TiltCard = ({ backgroundImg }) => {
         style={{
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
-          backgroundImage: `url(${backgroundImg})`
+          backgroundImage: `url(${backgImg})`
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl    shadow-lg"
+        className="absolute inset-4 grid place-content-center rounded-xl  bg-cover bg-end  shadow-lg"
       >
-        <FiMousePointer
+        {/* <FiMousePointer
           style={{
             transform: "translateZ(75px)",
           }}
           className="mx-auto text-4xl"
-        />
+        /> */}
         <p
           style={{
             transform: "translateZ(50px)",
           }}
           className="text-center text-2xl font-bold"
         >
-          HOVER ME
+          
         </p>
       </div>
     </motion.div>
