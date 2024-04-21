@@ -88,12 +88,13 @@ export default function AuthenticatedNavbar() {
                   <p className="font-semibold">Signed in as</p>
                   <p className="font-semibold">{strEmail}</p>
                 </DropdownItem>
-                <DropdownItem key="settings">My Settings</DropdownItem>
-                <DropdownItem key="team_settings">Team Settings</DropdownItem>
-                <DropdownItem key="analytics">Analytics</DropdownItem>
-                <DropdownItem key="system">System</DropdownItem>
-                <DropdownItem key="codespace" ><Link href="/authenticated/codespace">Playground</Link></DropdownItem>
-                <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+                <DropdownItem key="codespace" ><Link href="/authenticated/homepage" className="text-gray-200 outline-none">Home</Link></DropdownItem>
+                {/* <DropdownItem key="settings">My Settings</DropdownItem> */}
+                <DropdownItem key="codespace" ><Link href="/authenticated/code" className="text-gray-200 outline-none">Code Generate</Link></DropdownItem>
+                {/* <DropdownItem key="analytics">Analytics</DropdownItem> */}
+                {/* <DropdownItem key="system">System</DropdownItem> */}
+                <DropdownItem key="codespace" ><Link href="/authenticated/codespace" className="text-gray-200 outline-none">Playground</Link></DropdownItem>
+                {/* <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem> */}
                 <DropdownItem key="logout" color="danger" onClick={() => logout()}>
                   Log Out
                 </DropdownItem>
