@@ -136,8 +136,9 @@ export default function Homepage() {
         onChange={(e) => {
           uploadimage(e);
         }}
+        className="ml-[5vw] "
       />
-      <div className="mt-5">My Uploads</div>
+      <div className="mt-[3vw] pl-[47.7vw]">My Uploads</div>
       <div className="flex flex-wrap items-center justify-center mx-[20vw]">
         {media.map((media) => {
           const imageUrl = `https://reysjyjdootrkwsiolaj.supabase.co/storage/v1/object/public/codehub/ca229be8-b36a-4771-b40a-77c6fcd2ae77/${media.name}`;

@@ -17,7 +17,7 @@ export async function POST(request){
         model: 'gpt-4',
         stream: true,
         messages: [
-            { role: "system", content: "You are a helpful assistant. You explain software concepts simply to intermediate programmers."},
+            { role: "system", content: "You are a helpful assistant. You explain software concepts simply to intermediate programmers. You will be able to generate small code components as per the query of the user"},
             ...messages
         ]
     })
