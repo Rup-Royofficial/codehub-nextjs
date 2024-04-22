@@ -1,12 +1,14 @@
 "use client"
 import { useChat, Message } from "ai/react"
 import { Button } from "./ui/button";
+import ReactMarkdown from 'react-markdown'
 
 export default function ChatComponent() {
 
     const { input, handleInputChange, handleSubmit, isLoading, messages } = useChat();
     console.log(messages)
     console.log(input)
+    
     return(
         <div>
             <div>
@@ -28,19 +30,35 @@ export default function ChatComponent() {
                                 GPT-4
                             </h3>
                             :
-                            <h3 className="text-lg font-semibold mt-2">
+                            <h3 className="text-lg font-semibold mt-8">
                                 User
                             </h3>
                         }
                         
                         {/* Formatting the message */}
-                        {message.content.split("\n").map((currentTextBlock, index) => {
-                            if(currentTextBlock === "") {
-                                return <p key={message.id + index}>&nbsp;</p> // " "
-                            } else {
-                                return <p key={message.id + index}>{currentTextBlock}</p> 
-                            }
-                        })}
+                        <ReactMarkdown 
+                        components={{
+                            pre: ({ node, ...props }) => (
+                            <div className="overflow-auto w-full my-2 bg-black/50 py-5 px-3 rounded-lg">
+                                <pre {...props} />
+                            </div>
+                            ),
+                            code: ({ node, ...props }) => (
+                              <code className="bg-slate-900/50 rounded-lg px-3 py-1" {...props} />
+                            )}}
+                            className="text-sm overflow-hidden leading-7"
+                            >
+                            {message.content || "Error Fetching Data/Invalid Api Key"}
+                        </ReactMarkdown>
+                            {/* {message.content.split("\n").map((currentTextBlock, index) => {
+                                if(currentTextBlock === "") {
+                                    return <p key={message.id + index}>&nbsp;</p> // " "
+                                } else {
+                                    return <p key={message.id + index}>{currentTextBlock}</p> 
+                                }
+                            })} */}
+                        
+                        
                     </div>
                 )
             })}

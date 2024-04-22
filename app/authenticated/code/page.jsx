@@ -51,7 +51,7 @@ export default function CodeGeneration() {
         <AuthenticatedNavbar />
         <div className="flex min-h-screen flex-col items-center justify-between p-24">
           <div className="bg-gradient-to-t from-slate-900 to-purple-800 p-8 w-[800px] rounded-xl text-snow">
-            <h2 className="text-2xl font-semibold mb-[2vw]">GPT-4 Streaming Chat Application</h2>
+            <h2 className="text-2xl font-semibold mb-[2vw]">Solve your Coding Doubts</h2>
             <ChatComponent />
           </div>
         </div>
